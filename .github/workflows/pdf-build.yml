@@ -1,0 +1,58 @@
+on: [push]
+jobs:
+  BuildPdf:
+    runs-on: ubuntu-22.04
+    name: Build pdf from tex
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Build pdf builder
+        run: docker build -t pdfbuilder .
+
+      - name: Build pdf
+        run: docker run --mount src=`pwd`/resume,target=/resume,type=bind pdfbuilder
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: resume
+          path: resume/resume.pdf
+          retention-days: 1
+
+  PublishPdf:
+    needs: BuildPdf
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+    name: Publish pdf
+    steps:
+      - name: Checkout current repository
+        uses: actions/checkout@v2
+
+      - name: Checkout io repository
+        uses: actions/checkout@v2
+        with:
+          repository: 'alad1nks/alad1nks.github.io'
+          token: ${{ secrets.ACCESS_TOKEN }}
+
+      - name: Prepare to upload
+        run: |
+          git config user.name 'alad1nks'
+          git config user.email 'alad1nks@users.noreply.github.com'
+
+      - name: Remove existing resume
+        run: |
+          if [ -f resume.pdf ]; then
+            rm resume.pdf
+          fi
+
+      - name: Download resume from builder
+        uses: actions/download-artifact@v2
+        with:
+          name: resume
+
+      - name: Push resume
+        run: |
+          git add resume.pdf
+          git commit -m "Push resume from CI"
+          git push --set-upstream origin main

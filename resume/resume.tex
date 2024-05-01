@@ -1,0 +1,168 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\pdfgentounicode=1
+
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Huge \scshape Alibi Galeyev} \\ \vspace{1pt}
+    \small +77471545502 $|$
+    \href{mailto:vasya.sidr777@gmail.com}{\underline{vasya.sidr777@gmail.com}} $|$ 
+    \href{https://github.com/alad1nks}{\underline{github.com/alad1nks}} $|$
+    \href{https://t.me/asteslenko}{\underline{t.me/asteslenko}}
+\end{center}
+
+
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Higher School of Economics}{Moscow}
+      {Bachelor of Applied Mathematics and Informatics}{Aug. 2020 -- Present}
+  \resumeSubHeadingListEnd
+
+
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Developer of Audit Trails service}{Dec. 2023 -- Mar. 2024}
+      {Yandex Cloud}{Moscow}
+      \resumeItemListStart
+        \resumeItem{Improved secret validation logic}
+        \resumeItem{Created and implemented new async topic writer for trails and dlq messages}
+        \resumeItem{Updated amazon kinesis from v1 to v2}
+        \resumeItem{Fixed a bug in writing dlq messages}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Developer of dating app}{Aug. 2023 -- Dec. 2023}
+      {Matchmaker}{Moscow}
+      \resumeItemListStart
+        \resumeItem{Improved client-server interaction logic}
+        \resumeItem{Updated the logic of navigation to Debug Screen}
+        \resumeItem{Added custom view components according to design}
+        \resumeItem{Refactored the ui module, improving the dark theme logic}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Developer of psychological application}{June 2023 -- Aug. 2023}
+      {Psychological Essence}{Moscow}
+      \resumeItemListStart
+        \resumeItem{Added user profile screen and user profile settings screen}
+        \resumeItem{Fixed bugs with auth and quizzes}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{\href{https://github.com/alad1nks/DubovozkiAndroid}{DubovozkiAndroid}} $|$ \emph{Kotlin, Jetpack Compose, MVI, Hilt, Retrofit, Room, Coroutines}}{Dec. 2023 -- May 2024}
+          \resumeItemListStart
+            \resumeItem{Developed an Android mobile application with bus schedule for HSE Students using Jetpack Compose}
+            \resumeItem{Published app to \href{https://play.google.com/store/apps/details?id=com.app.dubkiapp}{\underline{Play Market}} gaining 500+ downloads and an average 5/5-star review}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{\href{https://github.com/alad1nks/DubovozkiBackend}{DubovozkiBackend}} $|$ \emph{Kotlin, Spring Boot, h2}}{Dec. 2023 -- May 2024}
+          \resumeItemListStart
+            \resumeItem{Developed a backend for DubovozkiAndroid application}
+            \resumeItem{Created bus schedule, registration, random coffee and admin panel}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{\href{https://github.com/alad1nks/SHCPCSD}{SHCPCSD}} $|$ \emph{Kotlin, Golang, Jetpack Compose, MVVM, Hilt, Room, Coroutines}}{May 2023 -- June 2023}
+          \resumeItemListStart
+            \resumeItem{Developed an Android mobile application for greenhouse plants using Kotlin}
+            \resumeItem{Developed the server part using Golang}
+            \resumeItem{Built graphs of temperature, humidity and light quality of plants}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Kotlin, Java, Golang, Python, C/C++} \\
+     \textbf{Frameworks}{: Jetpack Compose, Dagger2, Hilt, Coroutines, RxJava3, Retrofit2, Room, Spring Boot} \\
+     \textbf{Developer Tools}{: Git, Bash, Docker, CI, Firebase, AWS, Intellij} \\
+     \textbf{Libraries}{: pandas, NumPy, Matplotlib} \\
+     \textbf{Databases}{: PostgreSQL, Redis}
+    }}
+ \end{itemize}
+
+
+\end{document}
