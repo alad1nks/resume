@@ -5,7 +5,7 @@ jobs:
     name: Build pdf from tex
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Build pdf builder
         run: docker build -t pdfbuilder .
@@ -13,7 +13,7 @@ jobs:
       - name: Build pdf
         run: docker run --mount src=`pwd`/resume,target=/resume,type=bind pdfbuilder
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v4
         with:
           name: resume
           path: resume/resume.pdf
@@ -27,10 +27,10 @@ jobs:
     name: Publish pdf
     steps:
       - name: Checkout current repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Checkout io repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           repository: 'alad1nks/alad1nks.github.io'
           token: ${{ secrets.ACCESS_TOKEN }}
@@ -47,7 +47,7 @@ jobs:
           fi
 
       - name: Download resume from builder
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: resume
 
